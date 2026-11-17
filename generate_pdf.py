@@ -177,7 +177,7 @@ def create_project_report(output_filename):
         "The objective of this project was to transform a personal resume website into a modern, highly interactive, and responsive "
         "digital portfolio using pure semantic HTML5, advanced CSS3 techniques, and lightweight vanilla JavaScript (zero external "
         "frameworks, zero runtime dependencies). Drawing design inspiration from <b>buildwithclaude.in</b>, the website reflects "
-        "the personality of a 19-year-old founder building two tech startups in public (FlowLab & Closet) while studying at IIM Bangalore."
+        "the personality of a 19-year-old founder building two tech startups in public (FlowLab & Closet) while pursuing dual degrees at IIM Bangalore (BBA DBE) and PRSU (BCA LL.B.)."
     )
     story.append(Paragraph(obj_text, body_style))
     story.append(Spacer(1, 3))
@@ -206,7 +206,7 @@ def create_project_report(output_filename):
         "<b>CSS Grid (<code>display: grid</code>):</b> Powers the About section info grid, 3-column Skills categorization, 2-column Projects grid, 3-column Experience timeline, and 4-column Achievements stats counter row.",
         "<b>Positioning & Sticky Behavior:</b> Pinned sticky navigation with <code>position: fixed</code> and <code>backdrop-filter: blur(20px)</code>; absolute layering for floating background ambient shapes, typewriter cursor, and avatar spin rings.",
         "<b>CSS Variables & Design Tokens:</b> 20+ custom variables defined in <code>:root</code> managing background steps, border shades, accent glows, spacing scales, and cubic-bezier easing curves.",
-        "<b>Responsive Media Queries:</b> Four responsive breakpoints (1024px tablet, 768px mobile, 480px small mobile, prefers-reduced-motion) dynamically converting grids into single columns, adjusting typography scales, and toggling the mobile hamburger drawer.",
+        "<b>Responsive Media Queries:</b> Five responsive layers (1024px tablet, 768px mobile, 480px small mobile, <code>hover: hover</code> pointer guard, prefers-reduced-motion) dynamically converting grids, disabling cursor glow and 3D tilt on touch, using <code>100dvh</code> for mobile browser address bars, and toggling the mobile hamburger drawer with dark overlay.",
         "<b>Custom Micro-Interactions:</b> 3D card perspective tilt (<code>perspective(1000px) rotateX() rotateY()</code>), gradient text animations (<code>background-clip: text</code>), button ripple effects, and shimmering skill tags with sliding pseudo-elements."
     ]
     for tp in tech_points:
@@ -224,7 +224,7 @@ def create_project_report(output_filename):
         [
             Paragraph("Fluid <code>clamp()</code> Scale", table_cell),
             Paragraph("Glassmorphism Blur", table_cell),
-            Paragraph("Media Queries (4 Breakpoints)", table_cell),
+            Paragraph("Media Queries (5 Breakpoints)", table_cell),
             Paragraph("CSS Keyframes & Transforms", table_cell)
         ],
         [
@@ -266,22 +266,22 @@ def create_project_report(output_filename):
         [
             Paragraph("<b>Sticky Navigation</b>", table_cell_bold),
             Paragraph("<code>&lt;header&gt; &gt; &lt;nav&gt;</code>", table_cell),
-            Paragraph("Pinned with <code>position: fixed</code>; glassmorphic backdrop blur (20px); active scrollspy link indicators; responsive animated hamburger toggle for mobile devices.", table_cell)
+            Paragraph("Pinned with <code>position: fixed</code>; glassmorphic backdrop blur (20px); active scrollspy link indicators; responsive animated hamburger toggle with dark backdrop overlay for mobile devices.", table_cell)
         ],
         [
             Paragraph("<b>Hero / Intro</b>", table_cell_bold),
             Paragraph("<code>&lt;section id='hero'&gt;</code>", table_cell),
-            Paragraph("Full-height viewport (100vh); dynamic particle canvas with mouse physics; animated spinning gradient border on 'AD' initials badge; fluid gradient typewriter title; scroll-down indicator.", table_cell)
+            Paragraph("Full-height viewport (100vh / 100dvh); dynamic particle canvas with mouse physics; animated spinning gradient border on 'AD' initials badge; fluid gradient typewriter title; scroll-down indicator.", table_cell)
         ],
         [
             Paragraph("<b>About Me</b>", table_cell_bold),
             Paragraph("<code>&lt;section id='about'&gt;</code>", table_cell),
-            Paragraph("2-column asymmetric grid; narrative lead typography highlighting IIM Bangalore and tech startup identity; 4 info pill cards with hover lift; interactive rounded hobby badge cluster.", table_cell)
+            Paragraph("2-column asymmetric grid; narrative lead typography highlighting dual-degree student identity (IIM Bangalore + PRSU) and tech startups; 4 info pill cards with hover lift; interactive rounded hobby badge cluster.", table_cell)
         ],
         [
             Paragraph("<b>Education Timeline</b>", table_cell_bold),
             Paragraph("<code>&lt;section id='education'&gt;</code>", table_cell),
-            Paragraph("Vertical timeline with pseudo-element line; glowing indicator dots that pulse on scroll intersection; cards for IIM Bangalore BBA DBE, Senior Secondary, and Secondary schooling.", table_cell)
+            Paragraph("Vertical timeline with pseudo-element line; glowing indicator dots that pulse on scroll intersection; structured cards for PRSU BCA LL.B. (1st Year), IIM Bangalore BBA DBE, Senior Secondary, and Secondary schooling.", table_cell)
         ],
         [
             Paragraph("<b>Skills &amp; Tech</b>", table_cell_bold),
@@ -301,7 +301,7 @@ def create_project_report(output_filename):
         [
             Paragraph("<b>Achievements &amp; Stats</b>", table_cell_bold),
             Paragraph("<code>&lt;section id='achievements'&gt;</code>", table_cell),
-            Paragraph("4-counter stats bar with animated JavaScript numbers counting up upon scroll entry; 4 achievement cards detailing IIM admission, dual startups, full-stack building, and public metrics.", table_cell)
+            Paragraph("4-counter stats bar with animated JavaScript numbers counting up upon scroll entry; 4 achievement cards detailing IIM admission, dual-degree pursuit, dual startups, and public metrics.", table_cell)
         ],
         [
             Paragraph("<b>Contact &amp; Footer</b>", table_cell_bold),
