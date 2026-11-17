@@ -298,6 +298,25 @@ body:hover .cursor-glow {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Nav Mobile Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1040;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 /* ═══════════════════════════════════════════════════════
    HERO SECTION
@@ -1370,12 +1389,17 @@ body:hover .cursor-glow {
         display: flex;
     }
 
+    .nav-overlay {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         width: 280px;
         height: 100vh;
+        height: 100dvh;
         background: var(--bg-secondary);
         border-left: 1px solid var(--border);
         flex-direction: column;
@@ -1385,6 +1409,7 @@ body:hover .cursor-glow {
         padding: 24px;
         transition: right 0.4s var(--ease-out);
         z-index: 1050;
+        overflow-y: auto;
     }
 
     .nav-links.open {
@@ -1393,32 +1418,201 @@ body:hover .cursor-glow {
 
     .nav-link {
         font-size: 1.1rem;
-        padding: 12px 24px;
+        padding: 14px 28px;
+        width: 100%;
+        text-align: center;
+        border-radius: var(--radius-sm);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--accent-soft);
+    }
+
+    .nav-link-cta {
+        margin-top: 8px;
+    }
+
+    /* Hero — tighter on mobile */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-top: 72px;
+    }
+
+    .hero-avatar {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 24px;
+    }
+
+    .avatar-text {
+        font-size: 2rem;
+    }
+
+    .hero-greeting {
+        font-size: 0.85rem;
+    }
+
+    .hero-tagline {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 1rem;
+    }
+
+    .tagline-dot {
+        display: none;
+    }
+
+    .hero-cta {
+        gap: 12px;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    /* Disable heavy background effects on mobile */
+    .cursor-glow {
+        display: none !important;
+    }
+
+    .hero-shapes .shape {
+        opacity: 0.04;
+    }
+
+    /* Sections — tighter padding on mobile */
+    .section {
+        padding: clamp(40px, 8vw, 80px) 0;
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    .container {
+        padding: 0 16px;
     }
 
     /* About */
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
+    }
+
+    .about-lead {
+        font-size: 1.05rem;
     }
 
     .about-info {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .info-card {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .info-value {
+        font-size: 0.85rem;
+    }
+
+    .hobby-tags {
+        gap: 8px;
+    }
+
+    .hobby-tag {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    /* Education Timeline */
+    .timeline {
+        padding-left: 32px;
+    }
+
+    .timeline-content {
+        padding: 22px;
+    }
+
+    .timeline-heading {
+        font-size: 1.05rem;
     }
 
     /* Skills */
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-category {
+        padding: 24px;
+    }
+
+    .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.75rem;
     }
 
     /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card-inner {
+        padding: 24px;
+    }
+
+    .project-number {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    /* Experience */
+    .exp-cards {
+        gap: 16px;
+    }
+
+    .exp-card {
+        padding: 24px;
+    }
+
+    .exp-title {
+        font-size: 1.1rem;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
     }
 
     /* Achievements */
     .achievements-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .achievement-card {
+        padding: 24px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-item {
+        padding: 20px 12px;
     }
 
     /* Contact */
@@ -1429,17 +1623,16 @@ body:hover .cursor-glow {
 
     .contact-card {
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
     }
 
-    /* Hero */
-    .hero-tagline {
-        flex-direction: column;
-        gap: 4px;
+    .contact-lead {
+        font-size: 1rem;
     }
 
-    .tagline-dot {
-        display: none;
+    /* Footer */
+    .footer {
+        padding: 32px 0;
     }
 }
 
@@ -1451,30 +1644,115 @@ body:hover .cursor-glow {
 
     .stats-row {
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 10px;
+    }
+
+    .stat-item {
+        padding: 16px 8px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
     }
 
     .hero-cta {
         flex-direction: column;
+        width: 100%;
+        padding: 0 16px;
     }
 
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 14px 20px;
     }
 
     .timeline {
-        padding-left: 28px;
+        padding-left: 24px;
+    }
+
+    .timeline::before {
+        left: 5px;
     }
 
     .timeline-dot {
-        left: -24px;
-        width: 12px;
-        height: 12px;
+        left: -23px;
+        width: 10px;
+        height: 10px;
     }
 
     .timeline-content {
+        padding: 18px;
+    }
+
+    .timeline-heading {
+        font-size: 0.95rem;
+    }
+
+    .timeline-desc {
+        font-size: 0.85rem;
+    }
+
+    .project-card-inner {
         padding: 20px;
+    }
+
+    .project-number {
+        font-size: 1.8rem;
+    }
+
+    .project-title {
+        font-size: 1.05rem;
+    }
+
+    .project-desc {
+        font-size: 0.85rem;
+    }
+
+    .exp-card {
+        padding: 20px;
+    }
+
+    .achievement-card {
+        padding: 20px;
+    }
+
+    .info-card {
+        padding: 14px;
+    }
+
+    .info-icon {
+        font-size: 1.25rem;
+    }
+
+    .info-label {
+        font-size: 0.7rem;
+    }
+
+    .info-value {
+        font-size: 0.8rem;
+    }
+
+    .section-number {
+        font-size: 0.75rem;
+    }
+
+    .contact-card {
+        padding: 16px 20px;
+        max-width: 100%;
+    }
+
+    .footer-brand {
+        font-size: 0.9rem;
+    }
+
+    .footer-copy,
+    .footer-year {
+        font-size: 0.75rem;
     }
 }
 

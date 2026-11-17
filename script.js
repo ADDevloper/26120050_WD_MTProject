@@ -164,14 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ─────────────────────────────────────────
-    // 3. CURSOR GLOW EFFECT
+    // 3. CURSOR GLOW EFFECT (Desktop Only)
     // ─────────────────────────────────────────
     const cursorGlow = document.getElementById('cursor-glow');
 
-    document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-    });
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && cursorGlow) {
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+    }
 
 
     // ─────────────────────────────────────────
@@ -232,24 +234,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ─────────────────────────────────────────
-    // 6. MOBILE HAMBURGER MENU
+    // 6. MOBILE HAMBURGER MENU & OVERLAY
     // ─────────────────────────────────────────
     const hamburger = document.getElementById('hamburger');
     const navLinksContainer = document.getElementById('nav-links');
+    const navOverlay = document.getElementById('nav-overlay');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinksContainer.classList.toggle('open');
-        document.body.style.overflow = navLinksContainer.classList.contains('open') ? 'hidden' : '';
-    });
+    function closeMobileMenu() {
+        if (hamburger) hamburger.classList.remove('active');
+        if (navLinksContainer) navLinksContainer.classList.remove('open');
+        if (navOverlay) navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function toggleMobileMenu() {
+        const isOpen = navLinksContainer.classList.toggle('open');
+        hamburger.classList.toggle('active', isOpen);
+        if (navOverlay) navOverlay.classList.toggle('active', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMobileMenu);
+    }
 
     // Close menu on link click
     navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinksContainer.classList.remove('open');
-            document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMobileMenu);
     });
 
 
@@ -289,28 +304,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ─────────────────────────────────────────
-    // 8. CARD TILT EFFECT (3D Hover)
+    // 8. CARD TILT EFFECT (3D Hover — Desktop Only)
     // ─────────────────────────────────────────
-    const tiltCards = document.querySelectorAll('[data-tilt]');
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const tiltCards = document.querySelectorAll('[data-tilt]');
 
-    tiltCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
 
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
         });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        });
-    });
+    }
 
 
     // ─────────────────────────────────────────
