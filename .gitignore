@@ -1,0 +1,6 @@
+# Ignore private student docs and example assignment PDFs
+id-card-IIMBDBE.pdf
+26120702_WD_MTProject.pdf
+26120885_WD_MTProject.pdf
+.DS_Store
+Thumbs.db

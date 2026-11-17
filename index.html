@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay Dewangan — Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         SCROLL PROGRESS BAR
+    ═══════════════════════════════════════════ -->
+    <div id="progress-bar" class="progress-bar"></div>
+
+    <!-- ═══════════════════════════════════════════
+         CURSOR GLOW (follows mouse)
+    ═══════════════════════════════════════════ -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION BAR
+    ═══════════════════════════════════════════ -->
+    <header id="navbar" class="navbar">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-badge">AD</span>
+                <span class="logo-name">Abhay</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+                <li><a href="#contact" class="nav-link nav-link-cta" data-section="contact">Contact</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero">
+        <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+        <div class="hero-content">
+            <!-- Animated Initials Avatar -->
+            <div class="hero-avatar" aria-hidden="true">
+                <div class="avatar-ring"></div>
+                <span class="avatar-text">AD</span>
+            </div>
+
+            <!-- Name with typewriter -->
+            <h1 class="hero-name">
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-fullname" id="typed-name"></span>
+                <span class="typewriter-cursor" aria-hidden="true">|</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="hero-tagline">
+                <span class="tagline-word">19-y/o Founder</span>
+                <span class="tagline-dot">·</span>
+                <span class="tagline-word">Developer</span>
+                <span class="tagline-dot">·</span>
+                <span class="tagline-word">Building in Public</span>
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Explore My Work</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+
+        <!-- Decorative floating shapes -->
+        <div class="hero-shapes" aria-hidden="true">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ─── ABOUT ─── -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p class="about-lead">
+                            I'm <strong>Abhay Dewangan</strong>, a 19-year-old founder building two
+                            startups in public — <strong>FlowLab</strong> (Shopify for AI video workflows)
+                            &amp; <strong>Closet</strong> (AI wardrobe). I'm letting the market
+                            decide which one wins.
+                        </p>
+                        <p>
+                            Currently a BBA student at <strong>IIM Bangalore</strong> in the Digital Business
+                            &amp; Entrepreneurship programme. I live at the intersection of code and
+                            commerce — shipping products, writing code, and learning what customers
+                            actually want. When I'm not building, I'm reading, gaming, or exploring new tech.
+                        </p>
+                    </div>
+
+                    <div class="about-info reveal">
+                        <div class="info-card">
+                            <span class="info-icon">🎓</span>
+                            <div class="info-content">
+                                <span class="info-label">Institution</span>
+                                <span class="info-value">IIM Bangalore</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon">📚</span>
+                            <div class="info-content">
+                                <span class="info-label">Programme</span>
+                                <span class="info-value">BBA in DBE</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon">🚀</span>
+                            <div class="info-content">
+                                <span class="info-label">Focus</span>
+                                <span class="info-value">FlowLab &amp; Closet</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon">📍</span>
+                            <div class="info-content">
+                                <span class="info-label">Based In</span>
+                                <span class="info-value">India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hobbies / Interests -->
+                <div class="hobby-section reveal">
+                    <h3 class="hobby-title">Interests &amp; Hobbies</h3>
+                    <div class="hobby-tags">
+                        <span class="hobby-tag">💻 Coding &amp; Tech</span>
+                        <span class="hobby-tag">📖 Reading</span>
+                        <span class="hobby-tag">🎮 Gaming</span>
+                        <span class="hobby-tag">✈️ Travel</span>
+                        <span class="hobby-tag">🏋️ Fitness</span>
+                        <span class="hobby-tag">🎵 Music</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── EDUCATION ─── -->
+        <section id="education" class="section education">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2026 — Present</span>
+                            <h3 class="timeline-heading">BBA in Digital Business &amp; Entrepreneurship</h3>
+                            <p class="timeline-institution">Indian Institute of Management, Bangalore</p>
+                            <p class="timeline-desc">
+                                Studying digital business strategy, entrepreneurship, web development,
+                                and emerging technologies. Learning to build and scale digital products.
+                            </p>
+                            <span class="timeline-badge">Currently Enrolled</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024 — 2026</span>
+                            <h3 class="timeline-heading">Senior Secondary Education (Class XII)</h3>
+                            <p class="timeline-institution">Higher Secondary School</p>
+                            <p class="timeline-desc">
+                                Completed higher secondary education with a focus on science and technology.
+                                Developed early interest in programming and digital innovation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 — 2024</span>
+                            <h3 class="timeline-heading">Secondary Education (Class X)</h3>
+                            <p class="timeline-institution">Secondary School</p>
+                            <p class="timeline-desc">
+                                Built a strong academic foundation. Started exploring web technologies
+                                and built first projects during this period.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SKILLS ─── -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Skills &amp; Technologies</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category reveal">
+                        <div class="skill-category-header">
+                            <span class="skill-icon">⚡</span>
+                            <h3>Development</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="90">HTML5</span>
+                            <span class="skill-tag" data-level="85">CSS3</span>
+                            <span class="skill-tag" data-level="75">JavaScript</span>
+                            <span class="skill-tag" data-level="70">Python</span>
+                            <span class="skill-tag" data-level="65">Android Dev</span>
+                            <span class="skill-tag" data-level="60">Git &amp; GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category reveal">
+                        <div class="skill-category-header">
+                            <span class="skill-icon">🧠</span>
+                            <h3>Business &amp; Strategy</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="85">Entrepreneurship</span>
+                            <span class="skill-tag" data-level="80">SaaS Strategy</span>
+                            <span class="skill-tag" data-level="75">Webapp Dev</span>
+                            <span class="skill-tag" data-level="70">Business Strategy</span>
+                            <span class="skill-tag" data-level="65">Product Thinking</span>
+                            <span class="skill-tag" data-level="60">Digital Marketing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category reveal">
+                        <div class="skill-category-header">
+                            <span class="skill-icon">🛠️</span>
+                            <h3>Tools &amp; Platforms</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="85">VS Code</span>
+                            <span class="skill-tag" data-level="80">GitHub Pages</span>
+                            <span class="skill-tag" data-level="70">Firebase</span>
+                            <span class="skill-tag" data-level="65">Figma</span>
+                            <span class="skill-tag" data-level="75">AI Tools</span>
+                            <span class="skill-tag" data-level="60">Linux / CLI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PROJECTS ─── -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-number">01</div>
+                            <h3 class="project-title">FlowLab</h3>
+                            <p class="project-desc">
+                                Shopify for AI video workflows — a platform that lets creators and businesses
+                                build, customize, and deploy AI-powered video generation pipelines without
+                                writing code. Drag-and-drop workflow builder with marketplace of AI models.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">SaaS</span>
+                                <span class="tech-tag">AI / ML</span>
+                                <span class="tech-tag">Video Tech</span>
+                                <span class="tech-tag">Web App</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ADDevloper" class="project-link" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-number">02</div>
+                            <h3 class="project-title">Closet</h3>
+                            <p class="project-desc">
+                                AI-powered wardrobe assistant that helps you organize your closet, get daily
+                                outfit recommendations based on weather and occasions, and discover your
+                                personal style — all powered by computer vision and smart algorithms.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">AI / CV</span>
+                                <span class="tech-tag">Mobile App</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Fashion Tech</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ADDevloper" class="project-link" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-number">03</div>
+                            <h3 class="project-title">Portfolio Website</h3>
+                            <p class="project-desc">
+                                This very website — a fully interactive personal portfolio built from scratch
+                                with vanilla HTML, CSS, and JavaScript. Features particle canvas, typewriter
+                                effect, 3D card tilts, scroll animations, and a dark terracotta theme.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://addevloper.github.io" class="project-link" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Live Demo
+                                </a>
+                                <a href="https://github.com/ADDevloper" class="project-link" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-number">04</div>
+                            <h3 class="project-title">Building in Public</h3>
+                            <p class="project-desc">
+                                Documenting my entire startup journey openly — sharing progress, failures,
+                                learnings, and metrics. Letting the market decide which startup wins.
+                                Follow along on GitHub for real-time updates.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Startups</span>
+                                <span class="tech-tag">Strategy</span>
+                                <span class="tech-tag">Content</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ADDevloper" class="project-link" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── EXPERIENCE ─── -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="exp-cards">
+                    <article class="exp-card reveal">
+                        <div class="exp-status-bar active"></div>
+                        <div class="exp-header">
+                            <span class="exp-status">🟢 Building in Public</span>
+                            <span class="exp-date">2026 — Present</span>
+                        </div>
+                        <h3 class="exp-title">FlowLab</h3>
+                        <p class="exp-role">Founder &amp; Developer</p>
+                        <p class="exp-desc">
+                            Building the "Shopify for AI video workflows" — a platform where creators
+                            and businesses can build, customize, and deploy AI-powered video generation
+                            pipelines without code. Handling product strategy, full-stack development, and go-to-market.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tech-tag">SaaS</span>
+                            <span class="tech-tag">AI Video</span>
+                            <span class="tech-tag">No-Code</span>
+                            <span class="tech-tag">Web App</span>
+                        </div>
+                    </article>
+
+                    <article class="exp-card reveal">
+                        <div class="exp-status-bar active"></div>
+                        <div class="exp-header">
+                            <span class="exp-status">🟢 Building in Public</span>
+                            <span class="exp-date">2026 — Present</span>
+                        </div>
+                        <h3 class="exp-title">Closet</h3>
+                        <p class="exp-role">Founder &amp; Developer</p>
+                        <p class="exp-desc">
+                            AI-powered wardrobe assistant that organizes your closet, suggests daily outfits
+                            based on weather, occasions, and personal style. Uses computer vision to digitize
+                            your wardrobe and smart algorithms for styling recommendations.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tech-tag">AI / CV</span>
+                            <span class="tech-tag">Mobile App</span>
+                            <span class="tech-tag">Fashion Tech</span>
+                        </div>
+                    </article>
+
+                    <article class="exp-card reveal">
+                        <div class="exp-status-bar"></div>
+                        <div class="exp-header">
+                            <span class="exp-status">🎯 The Philosophy</span>
+                            <span class="exp-date">Ongoing</span>
+                        </div>
+                        <h3 class="exp-title">Building in Public</h3>
+                        <p class="exp-role">Serial Entrepreneur</p>
+                        <p class="exp-desc">
+                            Running both startups simultaneously and sharing the journey openly.
+                            Letting the market decide which one wins. Documenting learnings, pivots,
+                            metrics, and real-world founder lessons — no filters.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tech-tag">Entrepreneurship</span>
+                            <span class="tech-tag">Strategy</span>
+                            <span class="tech-tag">Growth</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── ACHIEVEMENTS ─── -->
+        <section id="achievements" class="section achievements">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title">Achievements</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Stats Counter Row -->
+                <div class="stats-row reveal">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="2">0</span>
+                        <span class="stat-label">Active Startups</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">Projects Shipped</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="19">0</span>
+                        <span class="stat-label">Years Young</span>
+                    </div>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">🎓</div>
+                        <h3>IIM Bangalore</h3>
+                        <p>Admitted to the prestigious BBA in Digital Business &amp; Entrepreneurship programme at Indian Institute of Management, Bangalore.</p>
+                    </div>
+
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">🚀</div>
+                        <h3>Dual Startup Founder at 19</h3>
+                        <p>Building two startups simultaneously in public — FlowLab (AI video workflows) and Closet (AI wardrobe) — while completing a degree at IIM Bangalore.</p>
+                    </div>
+
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">💻</div>
+                        <h3>Full-Stack Builder</h3>
+                        <p>Self-taught developer shipping real products across web, mobile, and AI — from HTML/CSS to Python to Android development.</p>
+                    </div>
+
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">🌍</div>
+                        <h3>Building in Public</h3>
+                        <p>Openly documenting the startup journey — sharing wins, failures, and learnings. Letting the market decide which venture takes off.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ─── -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-number">07</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-content reveal">
+                    <p class="contact-lead">
+                        Have an idea, a project, or just want to say hello? I'd love to hear from you.
+                        Whether it's a collaboration, an opportunity, or a conversation about tech and business —
+                        let's connect!
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="https://github.com/ADDevloper" class="contact-card" target="_blank" rel="noopener">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <div>
+                                <span class="contact-card-label">GitHub</span>
+                                <span class="contact-card-value">@ADDevloper</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:abhay.dewangan@example.com" class="contact-card">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <div>
+                                <span class="contact-card-label">Email</span>
+                                <span class="contact-card-value">Say Hello 👋</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-badge">AD</span>
+                    <span>Abhay Dewangan</span>
+                </div>
+                <p class="footer-copy">
+                    Built with <span class="footer-heart">❤️</span> using HTML, CSS &amp; JavaScript
+                </p>
+                <p class="footer-year">&copy; 2026 — All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
